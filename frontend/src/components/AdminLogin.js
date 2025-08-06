@@ -10,7 +10,7 @@ function AdminLogin({ setAuthenticated }) {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/api/login", {
+      const response = await axios.post("https://mediakart-1.onrender.com/api/login", {
         username,
         password,
       });
