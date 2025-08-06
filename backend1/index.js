@@ -9,7 +9,7 @@ const port = 4000;
 
 app.use(cors({
   //origin: 'https://media-kart.vercel.app',
-  origin: 'http://localhost:3000',
+  origin: 'https://media-kart-bdew.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
   credentials: true
