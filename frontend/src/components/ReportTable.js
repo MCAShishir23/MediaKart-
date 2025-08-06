@@ -14,7 +14,7 @@ function ReportTable({ data}) {
   const handleWinnerClick = async (row) => {
     setLoadingEmail(row.email);
     try {
-      const response = await axios.post("http://localhost:4000/api/save-winner", row);
+      const response = await axios.post("https://mediakart-1.onrender.com/api/save-winner", row);
       if (response.data.success) {
         setSelectedWinners((prev) => [...prev, row]);
       } else {
@@ -33,7 +33,7 @@ function ReportTable({ data}) {
         try {
         const result = data.filter(user => !selectedWinners?.find(winner => winner.email === user.email));
         const selectedWinner = [...result].sort(() => 0.5 - Math.random()).slice(0, winners);
-        const promise = selectedWinner.map(async(winner) => await axios.post("http://localhost:4000/api/save-winner", winner))
+        const promise = selectedWinner.map(async(winner) => await axios.post("https://mediakart-1.onrender.com/api/save-winner", winner))
         await Promise.all(promise)
         setSelectedWinner([...selectedWinner, ...selectedWinners])
         setShowWinnerList(true);
