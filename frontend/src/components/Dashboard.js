@@ -17,7 +17,7 @@ function Dashboard() {
     formData.append("file", file);
 
     try {
-      const response = await axios.post("http://localhost:4000/api/upload", formData, {
+      const response = await axios.post("https://mediakart-1.onrender.com/api/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setReport(response.data.data);
